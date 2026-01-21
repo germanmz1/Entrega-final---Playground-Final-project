@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gestor de Gastos{% endblock %}</title>
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a> |
+    <a href="/gastos/crear/">Nuevo gasto</a> |
+    <a href="/gastos/categoria/crear/">Categorías</a> |
+    <a href="/gastos/metodo-pago/crear/">Métodos de pago</a>
+</nav>
+
+<hr>
+
+{% block content %}
+{% endblock %}
+
+<hr>
+
+<footer>
+    <p>© 2026 – Gestor de Gastos</p>
+</footer>
+
+</body>
+</html>
