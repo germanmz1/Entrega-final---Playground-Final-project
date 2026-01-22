@@ -1,17 +1,17 @@
-# Entrega-final---Playground-Final-project
 
 
-# Entrega-final---Playground-Final-project 
 
-# Alumno: Martínez Germán
+Entrega-final---Playground-Final-project 
 
-# Comisión: 84995
+Alumno: Martínez Germán
 
-# Curso: Python para desarrollo web
+Comisión: 84995
 
-# Profe: Nicolas Dziuma
+Curso: Python para desarrollo web
 
-# Tutor: Ariel Souto
+Profe: Nicolas Dziuma
+
+Tutor: Ariel Souto
 
 
 # Gestor de Gastos - con framework Django
