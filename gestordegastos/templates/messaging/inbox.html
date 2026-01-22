@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Bandeja de entrada</h2>
+
+{% if mensajes %}
+    {% for mensaje in mensajes %}
+        <div class="cozy-card">
+            <p><strong>De:</strong> {{ mensaje.remitente.username }}</p>
+            <p><strong>Asunto:</strong> {{ mensaje.asunto }}</p>
+            <p class="text-muted">{{ mensaje.fecha }}</p>
+
+            <a class="btn-cute" href="{% url 'messaging:detalle' mensaje.id %}">
+                Leer mensaje
+            </a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No tenés mensajes todavía</p>
+{% endif %}
+
+<a class="btn-cute" href="{% url 'messaging:enviar' %}">Enviar mensaje</a>
+{% endblock %}

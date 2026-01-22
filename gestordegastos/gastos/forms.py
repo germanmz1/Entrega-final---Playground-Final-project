@@ -14,12 +14,11 @@ class MetodoPagoForm(forms.ModelForm):
 class GastoForm(forms.ModelForm):
     class Meta:
         model = Gasto
-        fields = [
-            "titulo",
-            "descripcion",
-            "monto",
-            "categoria",
-            "fecha",
-            "metodo_pago",
-            "codigo"
-        ]
+        exclude = ("usuario",)
+        labels = {
+            "descripcion": "Descripción",
+            "monto": "Monto ($)",
+            "categoria": "Categoría",
+            "metodo_pago": "Método de pago",
+            "fecha": "Fecha",
+        }

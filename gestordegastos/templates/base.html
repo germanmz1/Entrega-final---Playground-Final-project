@@ -1,27 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Gestor de Gastos{% endblock %}</title>
-</head>
-<body>
 
-<nav>
-    <a href="/">Home</a> |
-    <a href="/gastos/crear/">Nuevo gasto</a> |
-    <a href="/gastos/categoria/crear/">Categorías</a> |
-    <a href="/gastos/metodo-pago/crear/">Métodos de pago</a>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/cozy.css' %}">
+</head>
+<body class="cozy-bg">
+
+<nav class="cozy-nav">
+
+    <div class="nav-left">
+        <a class="brand" href="{% url 'core:home' %}">Inicio</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="{% url 'gastos:lista' %}">Listado de Gastos</a>
+        <a href="{% url 'gastos:crear_gasto' %}">Nuevo gasto</a>
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'messaging:inbox' %}">Mensajes</a>
+            <a href="{% url 'accounts:profile' %}">Perfil</a>
+            <a href="{% url 'gastos:crear_categoria' %}">Crear nueva categoría</a>
+            <a href="{% url 'gastos:crear_metodo_pago' %}">Crear nuevo método</a>
+            <a class="danger" href="{% url 'accounts:logout' %}">Salir</a>
+        {% else %}
+            <a href="{% url 'accounts:login' %}">Login</a>
+            <a href="{% url 'accounts:signup' %}">Registro</a>
+            {% endif %}
+    </div>
 </nav>
 
-<hr>
+{% if messages %}
+<div class="cozy-container">
+    {% for message in messages %}
+        <div class="cozy-alert {{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+<main class="cozy-container">
 
-{% block content %}
-{% endblock %}
+{% block content %}{% endblock %}
 
-<hr>
+</main>
 
-<footer>
-    <p>© 2026 – Gestor de Gastos</p>
+<footer class="cozy-footer">
+    © 2026 – Gestor de Gastos
 </footer>
 
 </body>

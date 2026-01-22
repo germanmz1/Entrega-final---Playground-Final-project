@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Crear método de pago{% endblock %}
+
+{% block content %}
+<div class="cozy-card" style="max-width: 500px; margin: auto;">
+    <h2>Nuevo método de pago</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <p>
+                <label><strong>{{ field.label }}</strong></label><br>
+                {{ field }}
+                {% if field.errors %}
+                    <small style="color:#8a3a3a;">{{ field.errors }}</small>
+                {% endif %}
+            </p>
+        {% endfor %}
+
+        <button class="btn-cute" type="submit">
+            Guardar método
+        </button>
+    </form>
+</div>
+{% endblock %}

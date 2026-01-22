@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle del gasto{% endblock %}
+
+{% block content %}
+<div class="cozy-card">
+
+    <h2>{{ gasto.titulo }}</h2>
+
+    <p><strong>Monto:</strong> ${{ gasto.monto }}</p>
+    <p><strong>Categoría:</strong> {{ gasto.categoria }}</p>
+    <p><strong>Método de pago:</strong> {{ gasto.metodo_pago }}</p>
+    <p><strong>Fecha:</strong> {{ gasto.fecha }}</p>
+
+    {% if gasto.descripcion %}
+        <p><strong>Descripción:</strong><br>{{ gasto.descripcion }}</p>
+    {% endif %}
+
+    {% if gasto.codigo %}
+        <p><strong>Código:</strong> {{ gasto.codigo }}</p>
+    {% endif %}
+
+    <div style="margin-top: 20px;">
+        <a class="btn-cute" href="{% url 'gastos:lista' %}">Volver</a>
+
+        <a class="btn-cute" href="{% url 'gastos:editar_gasto' gasto.id %}">
+            Editar
+        </a>
+
+        <a class="btn-cute-danger" href="{% url 'gastos:borrar_gasto' gasto.id %}">
+            Borrar
+        </a>
+    </div>
+
+</div>
+{% endblock %}

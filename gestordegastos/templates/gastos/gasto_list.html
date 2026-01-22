@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Mis gastos{% endblock %}
+
+{% block content %}
+<div class="cozy-container">
+
+    <h2>Mis gastos</h2>
+
+    {% if gastos %}
+        {% for gasto in gastos %}
+            <div class="cozy-card">
+
+                <h3>{{ gasto.titulo }}</h3>
+
+                {% if gasto.descripcion %}
+                    <p>{{ gasto.descripcion|truncatechars:120 }}</p>
+                {% endif %}
+
+                <p>
+                    Monto: <strong>${{ gasto.monto }}</strong><br>
+                    Fecha: {{ gasto.fecha }}<br>
+                    Categoria: {{ gasto.categoria }}<br>
+                    Medio de pago: {{ gasto.metodo_pago }}
+                </p>
+
+                <div style="margin-top: 14px;">
+                    <a class="btn-cute" href="{% url 'gastos:detalle_gasto' gasto.id %}">
+                        Ver detalle
+                    </a>
+                    <a class="btn-cute" href="{% url 'gastos:editar_gasto' gasto.id %}">
+                        Editar
+                    </a>
+                    <a class="btn-cute-danger" href="{% url 'gastos:borrar_gasto' gasto.id %}">
+                        Borrar
+                    </a>
+                </div>
+
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="cozy-card">
+            <p>No hay gastos por ahora.</p>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

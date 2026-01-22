@@ -1,0 +1,220 @@
+/* =========================
+GLOBAL THEME
+   ========================= */
+
+:root {
+    --cozy-bg: #fdfaf5;
+    --cozy-card: #ffffff;
+    --cozy-border: #e8e0d5;
+    --cozy-text: #5d544b;
+    --cozy-accent: #b8c1a2; /* verde salvia */
+    --cozy-accent-dark: #9aa488;
+    --cozy-danger: #e5b1b1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cozy-bg);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--cozy-text);
+}
+
+/* -------------------------
+CARDS
+-------------------------- */
+.cozy-card {
+    background-color: var(--cozy-card);
+    border: 2px solid var(--cozy-border);
+    border-radius: 30px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(125, 110, 99, 0.1);
+    margin-bottom: 20px;
+}
+
+/* -------------------------
+TITLES
+-------------------------- */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+}
+
+/* -------------------------
+BUTTONS
+-------------------------- */
+.btn-cute {
+    background-color: var(--cozy-accent);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 26px;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-cute:hover {
+    background-color: var(--cozy-accent-dark);
+    transform: translateY(-2px);
+}
+
+/* Danger button */
+.btn-cute-danger {
+    background-color: var(--cozy-danger);
+    border-radius: 50px;
+    border: none;
+    color: white;
+    padding: 10px 26px;
+}
+
+
+input, select, textarea {
+    border-radius: 20px !important;
+    border: 2px solid var(--cozy-border) !important;
+    padding: 10px 14px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(184, 193, 162, 0.3);
+    border-color: var(--cozy-accent);
+}
+
+/* -------------------------
+LAYOUT APP
+-------------------------- */
+
+.cozy-bg {
+    background-color: var(--cozy-bg);
+    min-height: 100vh;
+}
+
+/* Main container */
+.cozy-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Footer */
+.cozy-footer {
+    text-align: center;
+    padding: 24px;
+    color: #9c8f85;
+}
+
+form p {
+    margin-bottom: 14px;
+}
+/* -------------------------
+NAVBAR
+-------------------------- */
+.cozy-nav {
+    background-color: var(--cozy-card);
+    border-bottom: 2px solid var(--cozy-border);
+    padding: 14px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cozy-nav a {
+    text-decoration: none;
+    color: var(--cozy-text);
+    font-weight: 600;
+    margin-left: 16px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.cozy-nav a:hover {
+    background-color: var(--cozy-accent);
+    color: white;
+}
+
+.cozy-nav .brand {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 0;
+}
+
+.cozy-nav .danger:hover {
+    background-color: var(--cozy-danger);
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* -------------------------
+ALERTS / MESSAGES
+-------------------------- */
+
+.cozy-alert {
+    padding: 14px 22px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    animation: fadeIn 0.4s ease;
+}
+
+/* Types */
+.cozy-alert.success {
+    background-color: #eaf3e3;
+    border: 2px solid #c9dfb8;
+    color: #4f6b3c;
+}
+
+.cozy-alert.error {
+    background-color: #fbeaea;
+    border: 2px solid #e5b1b1;
+    color: #8a3a3a;
+}
+
+.cozy-alert.warning {
+    background-color: #fff4e5;
+    border: 2px solid #f0d6a8;
+    color: #7a5a2e;
+}
+
+.cozy-alert.info {
+    background-color: #eef4fa;
+    border: 2px solid #c5d8eb;
+    color: #3c5d7a;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------------
+FORMS
+-------------------------- */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.field-error {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #8a3a3a;
+}

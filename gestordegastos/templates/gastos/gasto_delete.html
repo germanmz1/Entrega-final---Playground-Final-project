@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Borrar gasto{% endblock %}
+
+{% block content %}
+<div class="cozy-card" style="max-width: 500px; margin: auto; text-align: center;">
+    <h2>Borrar gasto</h2>
+
+    <p>
+        ¿Estás seguro que querés borrar<br>
+        <strong>"{{ object.titulo }}"</strong>?
+    </p>
+
+    <form method="post" style="margin-top: 20px;">
+        {% csrf_token %}
+        <button class="btn-cute-danger" type="submit">
+            Sí, borrar
+        </button>
+    </form>
+
+    <div style="margin-top: 16px;">
+        <a class="btn-cute" href="{% url 'gastos:detalle_gasto' object.id %}">
+            Cancelar
+        </a>
+    </div>
+</div>
+{% endblock %}

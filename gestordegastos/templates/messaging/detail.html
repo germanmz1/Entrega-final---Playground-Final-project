@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="cozy-card">
+    <h2>{{ mensaje.asunto }}</h2>
+
+    <p>
+        <strong>De:</strong> {{ mensaje.remitente.username }} <br>
+        <strong>Fecha:</strong> {{ mensaje.fecha }}
+    </p>
+
+    <hr>
+
+    <p>{{ mensaje.contenido }}</p>
+
+    <a class="btn-cute" href="{% url 'messaging:inbox' %}">
+        Volver a la bandeja
+    </a>
+</div>
+{% endblock %}

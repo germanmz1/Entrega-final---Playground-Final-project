@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="cozy-card">
-    <h2>Nuevo gasto</h2>
+    <h2>Enviar mensaje</h2>
 
     <form method="post">
         {% csrf_token %}
@@ -22,8 +22,8 @@
             </div>
         {% endfor %}
 
-        <button type="submit" class="btn-cute">
-            Guardar gasto
+        <button class="btn-cute" type="submit">
+            Enviar
         </button>
     </form>
 </div>

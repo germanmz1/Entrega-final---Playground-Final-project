@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="cozy-card">
+    <h2>Bienvenido</h2>
+    <p>Este es tu espacio personal para llevar tus gastos con calma y estrategia.</p>
+
+    <div style="margin-top:20px">
+        <a class="btn-cute" href="{% url 'gastos:crear_gasto' %}">
+            + Nuevo gasto
+        </a>
+    </div>
+</div>
+{% endblock %}
